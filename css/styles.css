@@ -107,7 +107,7 @@ body {
   border: 2px solid #3F0C1F;
 }
 
-#menu-tile, #specials-tile, #map-tile {
+#carWash, #doggie-tile, #map-tile {
   height: 250px;
   width: 100%;
   margin-bottom: 15px;
@@ -115,19 +115,18 @@ body {
   border: 2px solid #3F0C1F;
   overflow: hidden;
 }
-#menu-tile:hover, #specials-tile:hover, #map-tile:hover, #mySlides:hover {
+#carWash:hover, #doggie-tile:hover, #map-tile:hover, #mySlides:hover {
   box-shadow: 0 1px 5px 1px #cccccc;
 }
-}
-#menu-tile {
+#carWash {
   background: url('../images/Turtle1.jpg') no-repeat;
   background-position: center;
 }
-#specials-tile {
+#doggie-tile {
   background: url('../images/Turtle2.png') no-repeat;
   background-position: center;
 }
-#menu-tile span, #specials-tile span, #map-tile span {
+#carWash span, #doggie-tile span, #map-tile span {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -221,7 +220,6 @@ h3.menu-item-title {
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
-    background: url('../images/jumbotron_1200.jpg') no-repeat;
     height: 675px;
   }
 }
@@ -230,7 +228,6 @@ h3.menu-item-title {
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
   #logo-img {
-    background: url('../images/Turtle01.jpg') no-repeat;
     width: 100px;
     height: 100px;
     margin: 5px 5px 5px 0;
@@ -239,7 +236,6 @@ h3.menu-item-title {
 
   /* Home Page */
   .container .jumbotron {
-    background: url('../images/jumbotron_992.jpg') no-repeat;
     height: 558px;
   }
   /* End Home Page */
@@ -249,7 +245,6 @@ h3.menu-item-title {
 @media (min-width: 768px) and (max-width: 991px) {
   /* Home Page */
   .container .jumbotron {
-    background: url('../images/jumbotron_768.jpg') no-repeat;
     height: 432px;
   }
   /* End Home Page */
@@ -317,7 +312,7 @@ h3.menu-item-title {
     margin-top: 30px;
     padding: 0;
   }
-  #menu-tile, #specials-tile {
+  #carWash, #doggie-tile {
     width: 360px;
     margin: 0 auto 15px;
   }
@@ -344,7 +339,7 @@ h3.menu-item-title {
   /* End Header */
   
   /* Home page */
-  #menu-tile, #specials-tile {
+  #carWash, #doggie-tile {
     width: 280px;
     margin: 0 auto 15px;
   }
