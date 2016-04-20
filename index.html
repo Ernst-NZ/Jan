@@ -7,6 +7,62 @@
     <title>Matamata Car Wash</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            var jssor_1_SlideoTransitions = [
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:1000,y:185},{b:1000,d:500,o:-1},{b:1500,d:500,o:1},{b:2000,d:1500,r:360},{b:3500,d:1000,rX:30},{b:4500,d:500,rX:-30},{b:5000,d:1000,rY:30},{b:6000,d:500,rY:-30},{b:6500,d:500,sX:1},{b:7000,d:500,sX:-1},{b:7500,d:500,sY:1},{b:8000,d:500,sY:-1},{b:8500,d:500,kX:30},{b:9000,d:500,kX:-30},{b:9500,d:500,kY:30},{b:10000,d:500,kY:-30},{b:10500,d:500,c:{x:87.50,t:-87.50}},{b:11000,d:500,c:{x:-87.50,t:87.50}}],
+              [{b:0,d:600,x:410,e:{x:27}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,o:1,e:{o:5}}],
+              [{b:-1,d:1,c:{x:175.0,t:-175.0}},{b:0,d:800,c:{x:-175.0,t:175.0},e:{c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,x:-570,o:1,e:{x:6}}],
+              [{b:-1,d:1,o:-1,r:-180},{b:0,d:800,o:1,r:180,e:{r:7}}],
+              [{b:0,d:1000,y:80,e:{y:24}},{b:1000,d:1100,x:570,y:170,o:-1,r:30,sX:9,sY:9,e:{x:2,y:6,r:1,sX:5,sY:5}}],
+              [{b:2000,d:600,rY:30}],
+              [{b:0,d:500,x:-105},{b:500,d:500,x:230},{b:1000,d:500,y:-120},{b:1500,d:500,x:-70,y:120},{b:2600,d:500,y:-80},{b:3100,d:900,y:160,e:{y:24}}],
+              [{b:0,d:1000,o:-0.4,rX:2,rY:1},{b:1000,d:1000,rY:1},{b:2000,d:1000,rX:-1},{b:3000,d:1000,rY:-1},{b:4000,d:1000,o:0.4,rX:-1,rY:-1}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $Idle: 2000,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions,
+                $Breaks: [
+                  [{d:2000,b:1000}]
+                ]
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1200);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script> 
+   
 </head>
 <body>
     <header>
@@ -30,13 +86,13 @@
                 <div id="collapsable-nav" class="collapse navbar-collapse">
                     <ul id="nav-list" class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="menu-categories.html">Automatic Car wash</a>
+                            <a href="menu-categories.html">Automatic <br class="hidden-xs hidden-md" />Car wash</a>
                         </li>
                         <li>
-                            <a href="#">Manual Car Wash</a>
+                            <a href="#">Manual <br class="hidden-xs hidden-md" />Car Wash</a>
                         </li>
                         <li>
-                            <a href="#">Doggie Wash</a>
+                            <a href="#">Doggie <br class="hidden-xs hidden-md" />Wash</a>
                         </li>                        
                     </ul><!-- #nav-list -->
                 </div><!-- .collapse .navbar-collapse -->
@@ -52,15 +108,122 @@
     </div>
      <div id="main-content" class="container">
         <div class="jumbotron">
-            <img src="images/jumbotron_768.jpg" alt="Picture of restaurant" class="img-responsive visible-xs">
+          <div class="container-fluid" style="position:relative;" ">
+            <div id="jssor_1" style="width: 1200px; height: 600px; overflow: hidden; visibility: hidden; padding-top: 0px;">
+              <!-- Loading Screen -->
+              <div data-u="loading" style="position: absolute; ">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; width: 100%; height: 100%;"></div>
+                <div style="position:absolute;display:block;background:url('../Images/loading.gif') no-repeat center center; width:100%;height:100%;"></div>
+              </div>
+              <div id="mySlides" data-u="slides" style="width: 1200px; height: 600px; overflow: hidden;">
+                <div data-p="112.50" style="display: none;">
+                    <a href="#">
+                        <img data-u="image" src="Images/colorado-colors.jpg" />
+                        <div data-u="caption" data-t="0" style="position: absolute; top: 320px; left: 30px;" class="SlideShowText">We wash your car for you</div>
+                    </a>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <a href="#">
+                    <img data-u="image" src="Images/colorado.jpg" />
+                    <div data-u="caption" data-t="1" data-3d="1"class="SlideShowText" style="position: absolute; top: -50px; left: 125px; background-color: #61122f;" >You can wash your own car</div>
+                  </a>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                    <a href="#">
+                        <img data-u="image" src="Images/medium.jpg" />
+                        <div data-u="caption" data-t="2" style="position: absolute; top: 30px; left: -380px;" class="SlideShowText">Do the outside</div>
+                    </a>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <a href="#">
+                      <img data-u="image" src="Images/monte-vista.jpg" />
+                      <div data-u="caption" data-t="3" style="position: absolute; top: 30px; left: 30px;" class="SlideShowText">Help with the inside</div>
+                  </a>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="Images/sunrise.jpg" />
+                  <div data-u="caption" data-t="4" style="position: absolute; top: 30px; left: 30px;" class="SlideShowText">You can even wash your dog</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/002.jpg" />
+                  <div data-u="caption" data-t="0" style="position: absolute; top: 320px; left: 30px;" class="SlideShowText">mobile ready, touch swipe</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/007.jpg" />
+                  <div data-u="caption" data-t="1" data-3d="1" style="position: absolute; top: -50px; left: 125px;" class="SlideShowText">time lined layer animation</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/003.jpg" />
+                  <div data-u="caption" data-t="2" style="position: absolute; top: 30px; left: -380px;" class="SlideShowText">finger catchable right to left</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/004.jpg" />
+                  <div data-u="caption" data-t="3" style="position: absolute; top: 30px; left: 30px;" class="SlideShowText">responsive, scale smoothly</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/005.jpg" />
+                  <div data-u="caption" data-t="4" style="position: absolute; top: 30px; left: 30px;" class="SlideShowText">image, text, and custom layers</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/006.jpg" />
+                  <div data-u="caption" data-t="5" style="position: absolute; top: 30px; left: 600px; width: 350px;" class="SlideShowText">tons of transition type</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/009.jpg" />
+                  <div data-u="caption" data-t="6" style="position: absolute; top: 30px; left: 30px;" class="SlideShowText">visual slider maker</div>
+                </div>
+                <div data-b="0" data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/008.jpg" />
+                  <div data-u="caption" data-t="7" style="position: absolute; top: -50px; left: 30px; " class="SlideShowText">play in and play out</div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/011.jpg" />
+                  <div data-u="caption" data-t="8" data-3d="1" style="position: absolute; top: 25px; left: 150px; width: 250px; height: 250px; background-color: #c70101; overflow: hidden;">
+                    <div data-u="caption" data-t="9" style="position: absolute; top: 100px; left: 25px; width: 200px; height: 50px; font-size: 24px; line-height: 50px;">Thank you to Pak'nSave for the sponsor</div>
+                  </div>
+                </div>
+                <div data-p="112.50" style="display: none;">
+                  <img data-u="image" src="../images/010.jpg" />
+                  <div data-u="caption" data-t="10" data-3d="1" style="position: absolute; top: 25px; left: 100px; width: 250px; height: 250px; background-color: #c70101;">
+                    <div style="margin: 15px; font-size: 20px;">
+                      <p>
+                        Thanks to our sponsors<br />
+                      </p>
+                      <p>
+                        New World
+                      </p>
+                      <img src="../images/002.jpg" style="height:50px;" />
+                      Please visit their website
+                      <a href="http://wwww.jssor.com" style="color:darkblue">
+                        New World Whakatane.
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Bullet Navigator -->
+              <div data-u="navigator" class="jssorb01" style="bottom:16px;right:16px;">
+                <div data-u="prototype" style="width:12px;height:12px;"></div>
+              </div>
+              <!-- Arrow Navigator -->
+              <span data-u="arrowleft" class="jssora02l" style="left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+              <span data-u="arrowright" class="jssora02r" style="right:8px;width:55px;height:55px;" data-autocenter="2"></span>
+            </div>
+              <script>
+        jssor_1_slider_init();
+              </script>
+          </div>
         </div>
 
         <div id="home-tiles" class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <a href="menu-categories.html"><div id="menu-tile"><span>Car Wash</span></div></a>
+              <a href="menu-categories.html">
+              <div id="menu-tile"><span>Car Wash</span></div></a>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <a href="single-category.html"><div id="specials-tile"><span>Doggie Wash</span></div></a>
+              <a href="single-category.html">
+              <div id="specials-tile"><span>Doggie Wash</span></div></a>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <a href="" target="_blank">
@@ -77,22 +240,22 @@
         <div class="container">
             <div class="row">
                 <section id="hours" class="col-sm-4">
-                    <span>Hours:</span><br>
-                    Sun-Thurs: 11:15am - 10:00pm<br>
-                    Fri: 11:15am - 2:30pm<br>
-                    Saturday Closed
+                    <span>We accept:</span><br>
+                    Pay Wave<br>
+                    Credit Card<br>
+                    Cash
                     <hr class="visible-xs">
                 </section>
                 <section id="address" class="col-sm-4">
-                    <span>Address:</span><br>
-                    7105 Reisterstown Road<br>
-                    Baltimore, MD 21215
-                    <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+                  <span>Address:</span><br>
+                  144 Broadway<br>
+                  Matamata<br>
+                  027 550 5577
                     <hr class="visible-xs">
                 </section>
                 <section id="testimonials" class="col-sm-4">
-                    <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
-                    <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+                    <p>"The best car wash south of Paris!"</p>
+                    <p>"Fast and easy! Couldn't ask for more! I'll be back again and again!"</p>
                 </section>
             </div>
             <div class="text-center">&copy; Matamata Car Wash 2016</div>
